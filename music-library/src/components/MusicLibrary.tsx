@@ -15,21 +15,29 @@ const songs = [
   { id: 10, title: "Lut Gaye", album: "Single", artist: "Jubin Nautiyal" }
 ];
 
+type SortOption = 'title' | 'artist' | 'album';
+
 export default function MusicLibrary() {
   const [search, setSearch] = useState("");
+  const [sortOption, setSortOption] = useState<SortOption>('title');
 
   const filteredSongs = songs
   .filter((song) => (
     song.artist.toLowerCase().includes(search.toLowerCase()) ||
     song.title.toLowerCase().includes(search.toLowerCase()) ||
     song.album.toLowerCase().includes(search.toLowerCase())
-  ));
-  // .sort((a, b) => a.title.localeCompare(b.title)); // Sort by title
+  )).sort((a, b) => a[sortOption].localeCompare(b[sortOption])); // Sort by title
 
   return (
     <div className="ml-container">
       <h2>Music Library</h2>
       <div className="ml-header">
+        <label className="ml-sort-label">Sort By:</label>
+        <select value={sortOption} className="ml-sort-button" onChange={(e) => setSortOption(e.target.value as SortOption)}>
+          <option value={'title'}>Title</option>
+          <option value={'artist'}>Artist</option>
+          <option value={'album'}>Album</option>
+        </select>
         <input
           type="text"
           placeholder="Search by title / album / artist"
