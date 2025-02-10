@@ -1,0 +1,16 @@
+.ml-container .ml-form-row {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+.ml-container .ml-form-row .ml-label {
+  width: 150px;
+  line-height: 50px;
+}
+
+.ml-container .ml-button {
+  margin-left: 15px;
+}

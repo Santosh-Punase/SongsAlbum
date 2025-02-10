@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { login } from "../auth";
+import './Login.css';
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -15,7 +16,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="mh-container">
       <h2>Login</h2>
       <input onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
       <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />

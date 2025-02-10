@@ -1,7 +1,6 @@
-import MusicLibrary from './components/MusicLibrary'
+import MusicLibrary from "./components/MusicLibrary";
 
 function App() {
-
   return (
     <MusicLibrary />
   )

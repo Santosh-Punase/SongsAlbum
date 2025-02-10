@@ -9,6 +9,7 @@ export function login(username: string, password: string) {
   if (users[username] && users[username].password === password) {
     const token = btoa(JSON.stringify(users[username]));
     localStorage.setItem("token", token);
+    localStorage.setItem("userRole", users[username].role);
     return token;
   }
   return null;
