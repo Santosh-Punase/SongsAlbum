@@ -23,7 +23,6 @@ const AddSong = ({ setSongs, setShowList }: { setSongs: (song: Omit<Song, 'id'>)
   return (
     <>
       <h2>Add a New Song</h2>
-
       <form onSubmit={handleSubmit}>
         <div className="ml-form-row">
           <label className="ml-label">Title:</label>
@@ -39,13 +38,14 @@ const AddSong = ({ setSongs, setShowList }: { setSongs: (song: Omit<Song, 'id'>)
           <label className="ml-label">Album:</label>
           <input type="text" name="album" onChange={handleChange} className="ml-input" />
         </div>
-
-        <button className="ml-button" type='button' onClick={() => setShowList(true)}>
-          Cancel
-        </button>
-        <button className="ml-button" type='submit'>
-          Save Song
-        </button>
+        <div className='ml-form-buttons'>
+          <button className="ml-button" type='button' onClick={() => setShowList(true)}>
+            Cancel
+          </button>
+          <button className="ml-button" type='submit'>
+            Save Song
+          </button>
+        </div>
       </form>
     </>
   );

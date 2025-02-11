@@ -1,16 +1,27 @@
+.ml-container form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
 .ml-container .ml-form-row {
-  width: 100%;
-  margin-bottom: 20px;
+  flex: 1;
+  margin-bottom: 1.25rem;
   display: flex;
   flex-direction: row;
-  height: 50px;
+  height: 3rem;
 }
 
 .ml-container .ml-form-row .ml-label {
-  width: 150px;
-  line-height: 50px;
+  flex: 1;
+  line-height: 3rem;
 }
 
 .ml-container .ml-button {
   margin-left: 15px;
+}
+
+.ml-container .ml-form-buttons {
+  display: flex;
+  justify-content: flex-end;
 }

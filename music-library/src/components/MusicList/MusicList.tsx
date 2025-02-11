@@ -20,25 +20,29 @@ export default function MusicList({ songs, setShowList }: { songs: Song[], setSh
     <>
       <h2>Music Library</h2>
       <div className="ml-header">
-        <label className="ml-sort-label">Sort By:</label>
-        <select value={sortOption} className="ml-sort-button" onChange={(e) => setSortOption(e.target.value as SortOption)}>
-          <option value={'title'}>Title</option>
-          <option value={'artist'}>Artist</option>
-          <option value={'album'}>Album</option>
-        </select>
-        <input
-          type="text"
-          placeholder="Search by title / album / artist"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        { userRole === 'admin' && (
-          <button onClick={() => setShowList(false)}>Add</button>
-        )}
+        <div className="ml-flex-row">
+          <label className="ml-sort-label">Sort By:</label>
+          <select value={sortOption} className="ml-sort-button" onChange={(e) => setSortOption(e.target.value as SortOption)}>
+            <option value={'title'}>Title</option>
+            <option value={'artist'}>Artist</option>
+            <option value={'album'}>Album</option>
+          </select>
+        </div>
+        <div className="ml-flex-row">
+          <input
+            type="text"
+            placeholder="Search by title / album / artist"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          { userRole === 'admin' && (
+            <button className="ml-add-button" onClick={() => setShowList(false)}>Add</button>
+          )}
+        </div>
       </div>
       <ul className="ml-list">
         {filteredSongs.map((song) => (
           <li className="ml-thumbnail" key={song.id}>
-            <div className="ml-image"></div>
+            <div className="ml-image">Thumbnail</div>
             <p className="ml-clip ml-title">{song.title}</p>
             <p className="ml-clip ml-album">{song.album}</p>
             <p className="ml-clip ml-artist">{song.artist}</p>

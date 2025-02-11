@@ -4,6 +4,8 @@ import { Song } from "../type/Music";
 import MusicList from "./MusicList/MusicList";
 import AddSong from "./AddSong/AddSong";
 
+import './MusicLibrary.css';
+
 const songsList = [
   { id: 1, title: "Tum Hi Ho", album: "Aashiqui 2", artist: "Arijit Singh" },
   { id: 2, title: "Channa Mereya", album: "Ae Dil Hai Mushkil", artist: "Arijit Singh" },
@@ -22,11 +24,13 @@ export default function MusicLibrary() {
   const [showList, setShowList] = useState<boolean>(true);
 
   return (
-    <div className="ml-container">
-      { showList
-      ? <MusicList songs={songs} setShowList={setShowList} />
-      : <AddSong setSongs={song => setSongs([...songs, { id: songs.length + 1, ...song }])} setShowList={setShowList} />
-      }
+    <div className="ml-wrapper">
+      <div className="ml-container">
+        { showList
+        ? <MusicList songs={songs} setShowList={setShowList} />
+        : <AddSong setSongs={song => setSongs([...songs, { id: songs.length + 1, ...song }])} setShowList={setShowList} />
+        }
+      </div>
     </div>
   );
 }
