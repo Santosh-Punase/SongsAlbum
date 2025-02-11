@@ -16,13 +16,13 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <>
       <nav className="ml-home-nav">
         <button onClick={handleLogout}>Logout</button>
       </nav>
       <h1>Welcome to the Music App</h1>
       <MusicLibrary />
-    </div>
+    </>
   );
 }
 

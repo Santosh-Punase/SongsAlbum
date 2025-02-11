@@ -8,13 +8,15 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/unauthorised" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <div className="mh-app">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/unauthorised" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
