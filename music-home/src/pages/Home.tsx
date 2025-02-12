@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import React, { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 
 import withAuthorization from "../HOC/withAuthorization";
@@ -21,7 +21,9 @@ function HomePage() {
         <button onClick={handleLogout}>Logout</button>
       </nav>
       <h1>Welcome to the Music App</h1>
-      <MusicLibrary />
+      <Suspense fallback={<div>Loading...</div>}>
+        <MusicLibrary />
+      </Suspense>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { login } from "../auth";
@@ -20,7 +20,7 @@ export default function Login() {
       <h2>Login</h2>
       <input onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
       <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} data-testid="login-button">Login</button>
     </div>
   );
 }
