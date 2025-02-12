@@ -23,20 +23,20 @@ const AddSong = ({ setSongs, setShowList }: { setSongs: (song: Omit<Song, 'id'>)
   return (
     <>
       <h2>Add a New Song</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} role='form'>
         <div className="ml-form-row">
-          <label className="ml-label">Title:</label>
-          <input type="text" name="title" onChange={handleChange} className="ml-input" />
+          <label className="ml-label" htmlFor='song-title-input'>Title:</label>
+          <input id='song-title-input' type="text" name="title" onChange={handleChange} className="ml-input" />
         </div>
 
         <div className="ml-form-row">
-          <label className="ml-label">Artist:</label>
-          <input type="text" name="artist" onChange={handleChange} className="ml-input" />
+          <label className="ml-label" htmlFor='song-arist-input'>Artist:</label>
+          <input id='song-arist-input' type="text" name="artist" onChange={handleChange} className="ml-input" />
         </div>
 
         <div className="ml-form-row">
-          <label className="ml-label">Album:</label>
-          <input type="text" name="album" onChange={handleChange} className="ml-input" />
+          <label className="ml-label" htmlFor='song-album-input'>Album:</label>
+          <input id='song-album-input' type="text" name="album" onChange={handleChange} className="ml-input" />
         </div>
         <div className='ml-form-buttons'>
           <button className="ml-button" type='button' onClick={() => setShowList(true)}>

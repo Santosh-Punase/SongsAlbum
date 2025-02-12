@@ -21,8 +21,8 @@ export default function MusicList({ songs, setShowList }: { songs: Song[], setSh
       <h2>Music Library</h2>
       <div className="ml-header">
         <div className="ml-flex-row">
-          <label className="ml-sort-label">Sort By:</label>
-          <select value={sortOption} className="ml-sort-button" onChange={(e) => setSortOption(e.target.value as SortOption)}>
+          <label className="ml-sort-label" htmlFor="sort-selection">Sort By:</label>
+          <select id="sort-selection" value={sortOption} className="ml-sort-button" onChange={(e) => setSortOption(e.target.value as SortOption)}>
             <option value={'title'}>Title</option>
             <option value={'artist'}>Artist</option>
             <option value={'album'}>Album</option>
@@ -43,7 +43,7 @@ export default function MusicList({ songs, setShowList }: { songs: Song[], setSh
         {filteredSongs.map((song) => (
           <li className="ml-thumbnail" key={song.id}>
             <div className="ml-image">Thumbnail</div>
-            <p className="ml-clip ml-title">{song.title}</p>
+            <p className="ml-clip ml-title" data-testid="song-title">{song.title}</p>
             <p className="ml-clip ml-album">{song.album}</p>
             <p className="ml-clip ml-artist">{song.artist}</p>
           </li>
