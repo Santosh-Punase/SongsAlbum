@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 
 
 const getUserMock = jest.fn();
-const navigateMock = (_props) => `href="${_props.to}"`;
+const navigateMock = (props: { to: string }) => `href="${props.to}"`;
 
 jest.mock("../auth", () => ({
   getUser: getUserMock,
